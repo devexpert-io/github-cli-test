@@ -98,3 +98,7 @@ $RECYCLE.BIN/
 # Temporary files
 *.tmp
 *.temp
+
+# Git Worktrees
+# Ignore worktree directories (they will be created in the parent directory)
+worktrees/
