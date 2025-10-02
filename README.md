@@ -52,6 +52,28 @@ npm run build
 - [OpenRouter API Keys](https://openrouter.ai/keys)
 - [OpenRouter Documentation](https://openrouter.ai/docs)
 
+## 🌳 Git Worktrees
+
+Este proyecto está configurado para trabajar con Git Worktrees, permitiendo desarrollar múltiples features simultáneamente.
+
+### Scripts Disponibles
+
+```bash
+# Crear un nuevo worktree
+./scripts/create-worktree.sh feature-nueva-funcionalidad
+
+# Listar todos los worktrees
+./scripts/list-worktrees.sh
+
+# Eliminar un worktree
+./scripts/remove-worktree.sh feature-nueva-funcionalidad
+
+# Limpiar worktrees huérfanos
+./scripts/cleanup-worktrees.sh
+```
+
+Para más información, consulta [WORKTREES.md](./WORKTREES.md).
+
 ## 📋 Próximas Funcionalidades
 
 Las siguientes issues están pendientes de implementación:

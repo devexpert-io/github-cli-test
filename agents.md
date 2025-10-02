@@ -102,7 +102,6 @@ github-cli-test/
 - **NO hacer commits automáticamente** a menos que se solicite explícitamente
 - **NO hacer push automáticamente** a menos que se solicite explícitamente
 - **Siempre preguntar antes** de realizar operaciones de Git que modifiquen el repositorio remoto
-- **Usar el directorio correcto** (`/Users/antonio/Desktop/github-cli-test`) para todas las operaciones
 - **Seguir las mejores prácticas** de desarrollo definidas en el stack tecnológico
 
 ## 🔗 Enlaces Útiles
