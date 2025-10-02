@@ -28,11 +28,18 @@ export const useApiKeyStore = create<ApiKeyStore>()(
                     });
 
                     const isValid = response.ok;
-                    set({ isValid, apiKey: key });
+                    
+                    // Solo almacenar la clave si es válida
+                    if (isValid) {
+                        set({ isValid: true, apiKey: key });
+                    } else {
+                        set({ isValid: false, apiKey: null });
+                    }
+                    
                     return isValid;
                 } catch (error) {
                     console.error('Error validating API key:', error);
-                    set({ isValid: false });
+                    set({ isValid: false, apiKey: null });
                     return false;
                 } finally {
                     set({ isLoading: false });
@@ -45,7 +52,7 @@ export const useApiKeyStore = create<ApiKeyStore>()(
         }),
         {
             name: 'api-key-storage',
-            partialize: (state) => ({ apiKey: state.apiKey }),
+            partialize: (state) => ({ apiKey: state.apiKey, isValid: state.isValid }),
         }
     )
 );

@@ -20,7 +20,7 @@ const ApiKeyConfiguration: React.FC = () => {
         if (isValidKey) {
             setMessage({ type: 'success', text: 'Clave de API válida y guardada correctamente' });
         } else {
-            setMessage({ type: 'error', text: 'La clave de API no es válida. Por favor, verifica e intenta nuevamente.' });
+            setMessage({ type: 'error', text: 'La clave de API no es válida. Verifica que la clave sea correcta y que tengas acceso a OpenRouter. Intenta nuevamente.' });
         }
     };
 
