@@ -52,7 +52,7 @@ export const useApiKeyStore = create<ApiKeyStore>()(
         }),
         {
             name: 'api-key-storage',
-            partialize: (state) => ({ apiKey: state.apiKey }),
+            partialize: (state) => ({ apiKey: state.apiKey, isValid: state.isValid }),
         }
     )
 );
