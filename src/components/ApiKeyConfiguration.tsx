@@ -20,7 +20,10 @@ const ApiKeyConfiguration: React.FC = () => {
         if (isValidKey) {
             setMessage({ type: 'success', text: 'Clave de API válida y guardada correctamente' });
         } else {
-            setMessage({ type: 'error', text: 'La clave de API no es válida. Verifica que la clave sea correcta y que tengas acceso a OpenRouter. Intenta nuevamente.' });
+            setMessage({
+                type: 'error',
+                text: 'La clave de API no es válida o ha expirado. Verifica que sea correcta y tenga los permisos necesarios para acceder a OpenRouter.'
+            });
         }
     };
 
@@ -49,7 +52,7 @@ const ApiKeyConfiguration: React.FC = () => {
                         <div className="relative">
                             <input
                                 id="apiKey"
-                                type={showKey ? 'text' : 'password'}
+                                type={showKey ? 'text' : 'password'} // Password field with toggle visibility
                                 value={inputKey}
                                 onChange={handleInputChange}
                                 placeholder="sk-or-v1-..."
@@ -69,8 +72,8 @@ const ApiKeyConfiguration: React.FC = () => {
 
                     {message && (
                         <div className={`flex items-center space-x-2 p-3 rounded-md ${message.type === 'success'
-                                ? 'bg-green-50 text-green-800 border border-green-200'
-                                : 'bg-red-50 text-red-800 border border-red-200'
+                            ? 'bg-green-50 text-green-800 border border-green-200'
+                            : 'bg-red-50 text-red-800 border border-red-200'
                             }`}>
                             {message.type === 'success' ? (
                                 <CheckCircle size={20} className="flex-shrink-0" />
