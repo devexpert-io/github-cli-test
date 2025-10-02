@@ -52,7 +52,7 @@ const ApiKeyConfiguration: React.FC = () => {
                         <div className="relative">
                             <input
                                 id="apiKey"
-                                type={showKey ? 'text' : 'password'}
+                                type={showKey ? 'text' : 'password'} // Password field with toggle visibility
                                 value={inputKey}
                                 onChange={handleInputChange}
                                 placeholder="sk-or-v1-..."
